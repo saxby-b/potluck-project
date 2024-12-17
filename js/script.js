@@ -64,9 +64,11 @@ const assignItems = function () {
         let listItem = document.createElement("li");
         listItem.innerText = `${guest.innerText} is bringing ${randomPotluckItem}. `;
         assignedItems.append(listItem);
+        potluckItems.splice(randomPotluckIndex, 1);
     }
 }
 
 assignButton.addEventListener("click", function() {
     assignItems();
+    assignButton.disabled = true;
 })
